@@ -32,7 +32,7 @@ runs:
 
     - name: Debug File Structure
       run: |
-        ls -R ./tests
+        ls -R ./
       shell: bash
 
 
