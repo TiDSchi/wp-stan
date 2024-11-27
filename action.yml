@@ -27,7 +27,7 @@ runs:
         tools: composer
 
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         github-server-url: https://github.com/TiDSchi/wp-stan.git
 
@@ -37,7 +37,7 @@ runs:
         echo "Current directory:"
         pwd
         echo "List all files:"
-        ls -R ./
+        ls -ltr ./
       shell: bash
 
 
