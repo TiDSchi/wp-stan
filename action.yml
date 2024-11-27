@@ -29,6 +29,13 @@ runs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
+
+    - name: Debug File Structure
+      run: |
+        ls -R ./tests
+      shell: bash
+
+
     - name: Run PHPStan with WordPress Rules
       shell: bash
       run: |
