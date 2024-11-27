@@ -34,5 +34,6 @@ runs:
       run: composer install --no-progress --no-suggest
 
     - name: Run PHPStan with WordPress Rules
+      shell: bash
       run: |
         phpstan analyse --level=${{ inputs.phpstan-level }} --configuration=${{ inputs.phpstan-config }}
