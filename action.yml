@@ -30,6 +30,7 @@ runs:
       uses: actions/checkout@v4
       with:
         github-server-url: https://github.com/TiDSchi/wp-stan.git
+        fetch-depth: 0
 
 
     - name: Debug File Structure
@@ -37,7 +38,7 @@ runs:
         echo "Current directory:"
         pwd
         echo "List all files:"
-        ls -ltr ./../
+        ls -ltr ./
       shell: bash
 
 
