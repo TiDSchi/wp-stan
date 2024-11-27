@@ -28,6 +28,9 @@ runs:
 
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        github-server-url: https://github.com/TiDSchi/wp-stan.git
+
 
     - name: Debug File Structure
       run: |
