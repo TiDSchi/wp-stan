@@ -20,28 +20,12 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout Code
+    - name: Run PHPStan with WordPress Rules
       uses: actions/checkout@v4
-      with:
-        github-server-url: https://github.com/TiDSchi/wp-stan.git
-        fetch-depth: 0
-
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.3'
-        tools: composer
-
-    - name: Debug File Structure
+      shell: bash
       run: |
         echo "Current directory:"
         pwd
         echo "List all files:"
         ls -ltr ./
-      shell: bash
-
-
-    - name: Run PHPStan with WordPress Rules
-      shell: bash
-      run: |
         php ./tests/bin/phpstan analyse --level=${{ inputs.phpstan-level }} --configuration=${{ inputs.phpstan-config }}
