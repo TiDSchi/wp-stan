@@ -29,8 +29,6 @@ runs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Install Dependencies
-
     - name: Run PHPStan with WordPress Rules
       shell: bash
       run: |
