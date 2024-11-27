@@ -1,0 +1,37 @@
+name: WP-Stan
+description: A custom GitHub Action to run PHPStan on WordPress plugins/themes.
+author: TiDschi
+
+inputs:
+  phpstan-config:
+    description: 'Path to PHPStan configuration file'
+    required: false
+    default: './phpstan.neon'
+
+  phpstan-level:
+    description: 'PHPStan analysis level'
+    required: false
+    default: 'max'
+
+outputs:
+  result:
+    description: 'The result of PHPStan analysis'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+        tools: composer
+
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: composer install --no-progress --no-suggest
+
+    - name: Run PHPStan with WordPress Rules
+      run: |
+        phpstan analyse --level=${{ inputs.phpstan-level }} --configuration=${{ inputs.phpstan-config }}
