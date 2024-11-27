@@ -1,5 +1,5 @@
 includes:
-  - test/szepeviktor/phpstan-wordpress/extension.neon
+  - tests/szepeviktor/phpstan-wordpress/extension.neon
 
 parameters:
   level: max
