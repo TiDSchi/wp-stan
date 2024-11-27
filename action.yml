@@ -30,6 +30,7 @@ runs:
       uses: actions/checkout@v3
 
     - name: Install Dependencies
+      shell: bash
       run: composer install --no-progress --no-suggest
 
     - name: Run PHPStan with WordPress Rules
