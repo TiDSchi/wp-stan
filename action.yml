@@ -27,11 +27,13 @@ runs:
         tools: composer
 
     - name: Checkout Code
-      uses: actions/checkout@v4
-
+      uses: actions/checkout@v3
 
     - name: Debug File Structure
       run: |
+        echo "Current directory:"
+        pwd
+        echo "List all files:"
         ls -R ./
       shell: bash
 
