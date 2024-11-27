@@ -32,4 +32,4 @@ runs:
     - name: Run PHPStan with WordPress Rules
       shell: bash
       run: |
-        vendor/bin/phpstan analyse --level=${{ inputs.phpstan-level }} --configuration=${{ inputs.phpstan-config }}
+        test/bin/phpstan analyse --level=${{ inputs.phpstan-level }} --configuration=${{ inputs.phpstan-config }}
